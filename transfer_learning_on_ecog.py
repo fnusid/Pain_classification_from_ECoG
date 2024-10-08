@@ -43,7 +43,6 @@ test_loader = DataLoader(Subset(dataset, test_indices), batch_size=4, shuffle=Fa
 
 model = torchvision.models.resnet50(pretrained=True)
 
-model
 
 model.avgpool =nn.Sequential(nn.Conv2d(2048,1024, kernel_size = (1,1), stride = (1,1), padding ='same'),
                               nn.ReLU(),
@@ -64,7 +63,6 @@ model.fc = nn.Sequential(nn.Linear(in_features = 1024, out_features=3),
                          nn.Sigmoid()
                          )
 
-model
 
 model.load_state_dict(torch.load('/content/drive/MyDrive/Herron_lab/Neural_data/weights_EEG/Resnet_eegepoch.pth'))
 
